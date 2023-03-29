@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>구구단 게임</title>
+</head>
+<body>
+<script>
+    function randomInt() {
+        return Math.floor(Math.random()*10)
+    }
+</script>
+<script>
+    function repeat() {
+        let cor = 0;
+        let wro = 0;
+        for(i=0; i<=9; i++) {
+        let question = randomInt() + "*" + randomInt();
+        let user = prompt(question);
+        if(user == null){
+            document.write("종료");
+            break;
+        }
+        else {
+            let answer = eval(question);
+            if(answer == user){
+                alert("정답입니다. 다음 문제");
+                cor++
+            }
+            else{
+                alert("틀렸습니다. 다음 문제");
+                wro++;
+            }
+        }
+    }
+    document.write("맞힌 횟수: " + cor + "<br>");
+    document.write("틀린 횟수: " + wro);
+}
+repeat();
+</script>
+</body>
+</html>
